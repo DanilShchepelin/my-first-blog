@@ -11,12 +11,18 @@
         </h1>
     </div>
 
-    <div>
-        <p>published: 21.03.2020, 21:45</p>
-        <h2>
-            <a href="">My first post</a>
-        </h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam commodi dolore earum eius, eligendi excepturi fuga iusto libero, praesentium sapiente ullam vel voluptates. Aliquam ex exercitationem magni perferendis vitae.</p>
-    </div>
+    {% for post in posts %}
+        <div>
+            <p>
+                {{ post.published_date }}
+            </p>
+            <h1>
+                <a href="">{{ post.title }}</a>
+            </h1>
+            <p>
+                {{ post.text|linebreaksbr }}
+            </p>
+        </div>
+    {% endfor %}
 </body>
 </html>
